@@ -14,11 +14,6 @@ int op1;
 char x;
 int choice;
 
-
-int interface();
-
-int CarsSelection();
-
 void horil (string x)
 {
 	cout<<"-\t\t\t"<<x<<"\t\t\t-"<<endl;
@@ -47,7 +42,7 @@ void vertil ()
 	}
 
 }
-
+}
 
 int main ()
 {
