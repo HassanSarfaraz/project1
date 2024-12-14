@@ -21,7 +21,6 @@ void horil (string x)
 
 int interface();
 
-int CarsSelection();
 
 
 void vertil ()
@@ -97,6 +96,85 @@ void Volvo()
     cout<<"\n\n\n\t\t\t\t\t      COLOUR : Yellow "<<endl;
 }
 	
+void CarsSelection()
+{
+    system("cls");
+    cout<<" \t\t\t ********* SELECT THE CAR *********"<<endl<<endl;
+    string cars[6]={"AUDI","DODGE","MAZDA","BMW","MUSTANG","VOLVO"};
+    for (int i=0;i<=5;i++)
+{
+    cout<<"\t\t\t\t\t  "<<i+1<<". "<<cars[i]<<endl;
+}
+    cout<<endl;
+
+}
+
+void interface()
+{    
+    system("cls");
+    cout<<"\t\t\t WELCOME TO DABANG RENT A CAR SERVICES "<<endl<<endl;
+    vertil();
+    horil("Do you want to rent a car (y)? : ");
+    vertil();
+	cout<<"\n\n\t\t\t\t    CARS DETAIL "<<endl<<endl;
+    cout<<"\t\t ***************************************************"<<endl;
+    cout<<"\t\t *    \t\t     1.Audi  \t\t\t   * "<<endl;
+    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
+    cout<<"\t\t *    \t\t     2.Dodge          \t\t   *"<<endl;
+    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
+    cout<<"\t\t *    \t\t     3.Mazda         \t\t   * "<<endl;
+    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
+    cout<<"\t\t *   \t\t     4.BMW              \t   * "<<endl;
+    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
+    cout<<"\t\t *   \t\t     5.Mustang          \t   * "<<endl;
+    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
+    cout<<"\t\t *   \t\t     6.Volvo            \t   *"<<endl;
+    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
+    cout<<"\t\t ***************************************************"<<endl;
+    cout<<"\t\t\tFor further info about us press: 7\t"<<endl;
+    cout<<" Enter Your Choice ============>> ";
+    char choice;
+    cin>>choice;
+    
+    switch(choice)
+    {
+case '1' :
+            Audi();
+            break ;
+case '2' :
+                
+            Dodge();
+            break ;
+case '3' :
+
+            Mazda();
+            break ;
+case '4' :
+
+            BMW();
+            break ;
+case '5' :
+
+            Mustang();
+            break ;
+case '6' :
+
+            Volvo();
+            break ;
+case '7' :
+	        information();
+	        break;
+case 'y':
+	       
+            while (choice!='y' && choice!='Y');
+            CarsSelection();
+            cout<<"Which Car Do You Want ? : ";
+            cin>>choice;
+            Calculate(choice);
+			break;
+    }
+}
+
 	void password()
 {
 	int i = 0;
