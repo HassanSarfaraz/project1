@@ -96,6 +96,7 @@ void Volvo()
     cout<<"\n\n\n\t\t\t\t\t      COLOUR : Yellow "<<endl;
 }
 	
+<<<<<<< Updated upstream
 void CarsSelection()
 {
     system("cls");
@@ -191,6 +192,12 @@ case 'y':
 		 	cout<<"Incorrect password"<<endl;
 		 	i = 0;
 		 }
+=======
+		result=pow(base,exponent);
+		cout<<result;
+		
+		return 0;
+>>>>>>> Stashed changes
 	}
 
 }
