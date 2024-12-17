@@ -338,7 +338,7 @@ void customer ()
 {
 	cout<<"hello";
 }
-void cinfo()
+void finfo()
 {
 	system ("cls");
 	int bore;
