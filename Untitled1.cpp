@@ -573,25 +573,28 @@ int main ()
 	horil("2. CUSTOMER\t\t\t");
 	vertil();
 	cin>>op1;
-	switch (op1)
+	if(op1==1)
 	{
-		case 1:
-			password();
-			admin ();
-			break;
-		case 2:
-			do
-    {
-    interface();
-    cout<<"\nDo you want to rent a car (y/n) ? : ";
-    cin>>x;
-    }
-    while (x!='y' || x!='Y');
-    CarsSelection();
+		password();
+		admin();
+	}
+	else if(op1==2)
+	{
+		int choi;
+		cout<<"\nDo you want to rent a car(press 1) ? : ";
+    	cin>>choi;
+		if(choi==1)
+		{
+			CarsSelection();
+		}
+		else
+			exit(0);
+        
+	}
     cout<<"Which Car Do You Want ? : ";
     cin>>choice;
     Calculate(choice);
-			break;
+            	further1();
 	}
-	further1();
-}
+
+
