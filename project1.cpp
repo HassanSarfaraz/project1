@@ -172,76 +172,6 @@ void Calculate(int choice)
            }
 }     
 
-void interface()
-{    
-    system("cls");
-    cout<<"\t\t\t WELCOME TO DABANG RENT A CAR SERVICES "<<endl<<endl;
-    vertil();
-    horil("Do you want to rent a car (y)? : ");
-    vertil();
-	cout<<"\n\n\t\t\t\t    CARS DETAIL "<<endl<<endl;
-    cout<<"\t\t ***************************************************"<<endl;
-    cout<<"\t\t *    \t\t     1.Audi  \t\t\t   * "<<endl;
-    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
-    cout<<"\t\t *    \t\t     2.Dodge          \t\t   *"<<endl;
-    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
-    cout<<"\t\t *    \t\t     3.Mazda         \t\t   * "<<endl;
-    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
-    cout<<"\t\t *   \t\t     4.BMW              \t   * "<<endl;
-    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
-    cout<<"\t\t *   \t\t     5.Mustang          \t   * "<<endl;
-    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
-    cout<<"\t\t *   \t\t     6.Volvo            \t   *"<<endl;
-    cout<<"\t\t * \t\t\t\t\t\t   *"<<endl;
-    cout<<"\t\t ***************************************************"<<endl;
-    cout<<"\t\t\tFor further info about us press: 7\t"<<endl;
-    cout<<" Enter Your Choice ============>> ";
-    char choice;
-    cin>>choice;
-    
-    switch(choice)
-    {
-case '1' :
-            Audi();
-            break ;
-case '2' :
-                
-            Dodge();
-            break ;
-case '3' :
-
-            Mazda();
-            break ;
-case '4' :
-
-            BMW();
-            break ;
-case '5' :
-
-            Mustang();
-            break ;
-case '6' :
-
-            Volvo();
-            break ;
-case '7' :
-	        information();
-	        break;
-case 'y':
-	       
-            while (choice!='y' && choice!='Y');
-            CarsSelection();
-            cout<<"Which Car Do You Want ? : ";
-            cin>>choice;
-            Calculate(choice);
-			break;
-    }
-}
-
-
-
-
-
 void password()
 {
 	int i = 0;
@@ -573,25 +503,28 @@ int main ()
 	horil("2. CUSTOMER\t\t\t");
 	vertil();
 	cin>>op1;
-	switch (op1)
+	if(op1==1)
 	{
-		case 1:
-			password();
-			admin ();
-			break;
-		case 2:
-			do
-    {
-    interface();
-    cout<<"\nDo you want to rent a car (y/n) ? : ";
-    cin>>x;
-    }
-    while (x!='y' || x!='Y');
-    CarsSelection();
+		password();
+		admin();
+	}
+	else if(op1==2)
+	{
+		int choi;
+		cout<<"\nDo you want to rent a car(press 1) ? : ";
+    	cin>>choi;
+		if(choi==1)
+		{
+			CarsSelection();
+		}
+		else
+			exit(0);
+        
+	}
     cout<<"Which Car Do You Want ? : ";
     cin>>choice;
     Calculate(choice);
-			break;
+            	further1();
 	}
-	further1();
-}
+
+
