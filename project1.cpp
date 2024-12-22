@@ -7,7 +7,7 @@ int days,amount,amount1;
   char driver;
 string name;
 int a = 0;
-string pass = "nigga";
+string pass = "insideout";
 string new_pass;
 int op1;
 char x;
@@ -33,7 +33,7 @@ void information() {
         "BEST SERVICES ACROSS MULTIPLE LOCATIONS",
         "TIMINGS: 9AM||7PM MONDAY TO SATURDAY",
         "FOR FURTHER INFORMATION \t ",
-        "CONTACT: 03356543288 || 03340800013"
+        "CONTACT: 03299155815 || 03009117593||0316989853"
     };
 
     int numLines = sizeof(infoLines) / sizeof(infoLines[0]);
@@ -117,7 +117,7 @@ void Charges()
   
     
     cout<<" Do You Want Driver (y/n) ? : ";
-    driver=getche();
+	driver=getche();
     cout<<endl<<"Your name"<<endl;
     cin>>name;
     cout<<endl<<" For How Many Days ? : ";
@@ -127,13 +127,13 @@ void Charges()
              {
                  amount1=(1000*days)+amount;
                  cout<<" Total Amount = "<<amount1<<" PKR"<<endl<<endl<<endl<<endl<<endl;
-                 cout<<" \t\t\t\t ********** Thanks To Visit Dabang Rent A Car Services **********";
+                 cout<<" \t\t\t\t ********** Thanks To Visit Guftaar Rent A Car Services **********";
                  cout<<endl<<endl<<endl<<endl<<endl;
              }
      else
                     {
                      cout<<" Total Amount = "<<amount<<" PKR"<<endl<<endl<<endl<<endl<<endl;
-                     cout<<" \t\t\t\t ********** Thanks To Visit Dabang Rent A Car Services **********";
+                     cout<<" \t\t\t\t ********** Thanks To Visit Guftaar Rent A Car Services **********";
                      cout<<endl<<endl<<endl<<endl<<endl;
                     }
 }
@@ -487,7 +487,7 @@ void further1()
 	}
 	else{
 		system("cls");
-		cout<<"Thank you for choosing Dabang Car Rental Service ";
+		cout<<"Thank you for choosing Guftar Car Rental Service ";
 	}
 }
 
@@ -497,7 +497,7 @@ int main ()
 {
 	system("color f");
 	vertil();
-	horil("Welcome to Dabang Car Rental Service");
+	horil("Welcome to Guftaar Car Rental Service");
 	horil("Choose from the following:\t");
 	horil("1. ADMIN\t\t\t");
 	horil("2. CUSTOMER\t\t\t");
