@@ -1,7 +1,7 @@
 #include<iostream>
 #include<stdlib.h>
 #include<conio.h>
-
+#include <fstream>
 using namespace std;
 int days,amount,amount1;
   char driver;
@@ -12,7 +12,6 @@ string new_pass;
 int op1;
 char x;
 int choice;
-
 void horil (string x)
 {
 	cout<<"-\t\t\t"<<x<<"\t\t\t-"<<endl;
@@ -23,19 +22,27 @@ void vertil ()
 }
 
 
-void information()
-{
-	system("cls");
-	vertil();
-	horil("G RENTALS HAS BEEN PROVIDING\t ");
-	horil("BEST RENTAL SERVICES SINCE 2019 ");
-	horil("G RENTS VARIETY OF CARS SITTING IN");
-	horil("GOOD CONDITION AND GIVES CUSTOMERS");
-	horil("BEST SEVICES ACROSS MULTIPLE LOCATIONS");
-	horil("TIMINGS: 9AM||7PM MONDAY TO SATURDAY");
-	horil("FOR FURTHUR INFORMATION \t ");
-	horil("CONTACT :03356543288||03340800013");
-	vertil();
+void information() {
+    system("cls");
+
+    string infoLines[] = {
+        "G RENTALS HAS BEEN PROVIDING\t ",
+        "BEST RENTAL SERVICES SINCE 2019 ",
+        "G RENTS VARIETY OF CARS SITTING IN",
+        "GOOD CONDITION AND GIVES CUSTOMERS",
+        "BEST SERVICES ACROSS MULTIPLE LOCATIONS",
+        "TIMINGS: 9AM||7PM MONDAY TO SATURDAY",
+        "FOR FURTHER INFORMATION \t ",
+        "CONTACT: 03356543288 || 03340800013"
+    };
+
+    int numLines = sizeof(infoLines) / sizeof(infoLines[0]);
+
+    vertil();
+    for (int i = 0; i < numLines; i++) {
+        horil(infoLines[i]);
+    }
+    vertil();
 }
 
 void Audi()
@@ -408,27 +415,36 @@ void ucars ()
 			break;
     }
 }
-void cinfo()
-{
-	system ("cls");
-	int bore;
-	cout<<"1. Appa Shamim ------ Toyota Corolla Grande ------ Paid Rs.12,000 ------ Number: 03217895672"<<endl;
-	cout<<"2. Babar Azam ------ Toyota Corolla Altis ------ Paid Rs.10,000 ------ Number: 00121789567"<<endl;
-	cout<<"3. Shiekh bin Salman ------ Toyota Land Cruiser ------ Paid Rs.25,000 ------ Number: 03337895672"<<endl;
-	cout<<"4. Suii ------ Honda Civic ------ Paid Rs.11,000 ------ Number: 03217895234"<<endl;
-	cout<<"5. Baji Shabana ------ Honda Civic Turbo ------ Paid Rs.14,000 ------ Number: 0332454672"<<endl;
-	cout<<"6. Prem ------ Audi A7 ------ Paid Rs.50,000 ------ Number: 0345321111"<<endl;
-	cout<<"7. Avada Noor Kedavra ------ Audi A6 ------ Paid Rs.45,000 ------ Number: 01231231230"<<endl;
-		cout<<"\n\nPress 1 to go back \nPress 2 to exit"<<endl;
-			cin>>bore;
-			if (bore == 2)
-			{
-				a = 1;
-			}
-			else if (bore == 1)
-			{
-				a = 0;
-			}
+void cinfo() {
+    system("cls"); 
+    ifstream file("customers.txt"); 
+
+    if (!file.is_open()) { 
+        cout << "Error: Could not open the file 'customers.txt'." << endl;
+        cout << "Make sure the file exists in the same directory as the program." << endl;
+        cout << "Press any key to continue...";
+        cin.ignore();
+        cin.get();
+        return;
+    }
+
+    string line;
+    cout << "Customer Information:\n\n";
+    while (getline(file, line)) { 
+        cout << line << endl;
+    }
+
+    file.close(); 
+
+    int bore;
+    cout << "\n\nPress 1 to go back \nPress 2 to exit" << endl;
+    cin >> bore;
+
+    if (bore == 2) {
+        a = 1; 
+    } else if (bore == 1) {
+        a = 0; 
+    }
 }
 void admin ()
 {
@@ -531,8 +547,6 @@ void further1()
 {
 	int a;
 	vertil();
-//	horil("Welcome to Dabang Car Rental Service");
-//	horil("Choose from the following:\t");
 	horil("1. ADMIN\t\t\t");
 	horil("2. EXIT\t\t\t");
 	vertil();
