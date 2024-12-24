@@ -90,7 +90,7 @@ void CarsSelection()
 		case 5:
 			cout<<"\t\t\tThe available Audi car is: \nE-tron \nMILEAGE: 900 km\nPRICE: PKR 35,000"<<endl;
 
-			break;
+			break;	
     }
 }
 
@@ -422,10 +422,10 @@ void further1()
 }
 
 void customers(){
-    int choi;
-		cout<<"\nDo you want to rent a car(press 1) ? : ";
-    	cin>>choi;
-		if(choi==1)
+    char choi;
+		cout<<"\nDo you want to rent a car press Y/y or N/n? : ";
+    	choi=getche();
+		if(choi=='Y' || choi=='y')
 		{
 			CarsSelection();
 		}
@@ -434,11 +434,10 @@ void customers(){
             cout<<"Thank you for choosing Guftar Car Rental Service ";
 			exit(0);
         }
-
         cout<<"Which Car Do You Want ? : ";
-    cin>>choice;
-    Calculate(choice);
-    further1();    
+		cin>>choice;
+   		Calculate(choice);
+    	further1();    
 }
 
 int main ()
@@ -462,8 +461,7 @@ int main ()
 	}
 	else if(op1==2)
 	{
-        customers();
-        
+        customers();     
 	}
     else if(op1==3)
 	{
