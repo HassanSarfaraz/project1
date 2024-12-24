@@ -366,7 +366,7 @@ void admin ()
 	horil("1. AVAILABLE CARS\t\t");
 	horil("2. CARS IN USE\t\t\t");
 	horil("3. CHECK CUSTOMER LIST\t\t");
-    horil("4. BACK\t\t\t\t");
+    horil("4. LOGOUT\t\t\t");
 	horil("5. EXIT\t\t\t\t");
 	vertil();
 	int op2;
@@ -408,12 +408,16 @@ void further1()
 			password();
 			admin ();
 	}
-    else if(a==2){
+	else if(a==2){
+		customers();
+	}
+    else if(a==3){
 
     }
 	else{
 		system("cls");
 		cout<<"Thank you for choosing Guftar Car Rental Service ";
+		system("pause");
 	}
 }
 
@@ -426,8 +430,8 @@ void customers(){
 			CarsSelection();
 		}
 		else{
+			system("pause");
             cout<<"Thank you for choosing Guftar Car Rental Service ";
-	
 			exit(0);
         }
 
@@ -452,6 +456,8 @@ int main ()
 	{
 		password();
 		admin();
+		cout<<"Thank you for choosing Guftar Car Rental Service "<<endl;
+		system("pause");
 		return 0;
 	}
 	else if(op1==2)
