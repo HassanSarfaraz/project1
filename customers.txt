@@ -1,7 +1,7 @@
-1. Appa Shamim ------ Toyota Corolla Grande ------ Paid Rs.12,000 ------ Number: 03217895672
-2. Babar Azam ------ Toyota Corolla Altis ------ Paid Rs.10,000 ------ Number: 00121789567
-3. Shiekh bin Salman ------ Toyota Land Cruiser ------ Paid Rs.25,000 ------ Number: 03337895672
-4. Suii ------ Honda Civic ------ Paid Rs.11,000 ------ Number: 03217895234
-5. Baji Shabana ------ Honda Civic Turbo ------ Paid Rs.14,000 ------ Number: 0332454672
-6. Prem ------ Audi A7 ------ Paid Rs.50,000 ------ Number: 0345321111
-7. Avada Noor Kedavra ------ Audi A6 ------ Paid Rs.45,000 ------ Number: 01231231230
+1. Appa Shamim ------ Toyota Premio ------ Paid Rs.15,000 ------ Number: 03217895672
+2. Babar Azam ------ Honda City ------ Paid Rs.6,000 ------ Number: 00121789567
+3. Shiekh bin Salman ------ Tesla CyberTruck ------ Paid Rs.40,000 ------ Number: 03337895672
+4. Suii ------ Hyundai Tucson ------ Paid Rs.15,000 ------ Number: 03217895234
+5. Baji Shabana ------ Hyundai Tucson ------ Paid Rs.15,000 ------ Number: 0332454672
+6. Prem ------ Audi E-tron ------ Paid Rs.35,000 ------ Number: 0345321111
+7. Avada Noor Kedavra ------ Audi E-tron ------ Paid Rs.35,000 ------ Number: 01231231230

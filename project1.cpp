@@ -3,28 +3,42 @@
 #include<conio.h>
 #include <fstream>
 using namespace std;
+
+// GLOBAL VARIABLES
 int days,amount,amount1;
-  char driver;
+char driver;
 string name;
 int a = 0;
-string pass = "insideout";
+string pass = "h";
 string new_pass;
 int op1;
-char x;
 int choice;
+
+// FUCTIONS USED
+void customers();
+void horil();
+void vertil ();
+void information();
+void CarsSelection();
+void Charges();
+void Calculate();
+void password();
+void acars();
+void further1();
+
+
 void horil (string x)
 {
 	cout<<"-\t\t\t"<<x<<"\t\t\t-"<<endl;
 }
+
 void vertil ()
 {
 	cout<<"================================================================================="<<endl;
 }
 
-
 void information() {
     system("cls");
-
     string infoLines[] = {
         "G RENTALS HAS BEEN PROVIDING\t ",
         "BEST RENTAL SERVICES SINCE 2019 ",
@@ -35,9 +49,7 @@ void information() {
         "FOR FURTHER INFORMATION \t ",
         "CONTACT: 03299155815 || 03009117593||0316989853"
     };
-
     int numLines = sizeof(infoLines) / sizeof(infoLines[0]);
-
     vertil();
     for (int i = 0; i < numLines; i++) {
         horil(infoLines[i]);
@@ -45,84 +57,52 @@ void information() {
     vertil();
 }
 
-void Audi()
-{
-    system("cls");
-    cout<<" \n\n\n\n\t\t\t\t****************** AUDI SPECS ****************** "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      MODEL : 2015"<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      FUEL CONSUMPTION : 10 L/Km "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      COLOUR : Black "<<endl;
-
-
-}
-void Dodge()
-{
-    system("cls");
-    cout<<" \n\n\n\t\t\t\t****************** DODGE SPECS ****************** "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      MODEL : 2015"<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      FUEL CONSUMPTION : 13 L/Km "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      COLOUR : Red "<<endl;
-}
-void Mazda()
-{
-    system("cls");
-    cout<<" \n\n\n\t\t\t\t****************** MAZDA SPECS ****************** "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      MODEL : 2020"<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      FUEL CONSUMPTION : 07 L/Km "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      COLOUR : Black "<<endl;
-}
-void BMW()
-{
-    system("cls");
-    cout<<" \n\n\n\t\t\t\t****************** BMW SPECS ****************** "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      MODEL : 2019"<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      FUEL CONSUMPTION : 15 L/Km "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      COLOUR : White "<<endl;
-
-}
-void Mustang()
-{
-    system("cls");
-    cout<<" \n\n\n\t\t\t\t****************** MUSTANG SPECS ****************** "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      MODEL : 2012"<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      FUEL CONSUMPTION : 12 L/Km "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      COLOUR : Grey "<<endl;
-
-}
-void Volvo()
-{
-    system("cls");
-    cout<<" \n\n\n\t\t\t\t****************** VOLVO SPECS ****************** "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      MODEL : 2022"<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      FUEL CONSUMPTION : 14 L/Km "<<endl;
-    cout<<"\n\n\n\t\t\t\t\t      COLOUR : Yellow "<<endl;
-
-}
-
 void CarsSelection()
 {
     system("cls");
     cout<<" \t\t\t ********* SELECT THE CAR *********"<<endl<<endl;
-    string cars[6]={"AUDI","DODGE","MAZDA","BMW","MUSTANG","VOLVO"};
-    for (int i=0;i<=5;i++)
+    string cars[5]={"Toyota","Honda","Tesla","Hyundai","Audi"};
+    for (int i=0;i<5;i++)
 {
     cout<<"\t\t\t\t\t  "<<i+1<<". "<<cars[i]<<endl;
 }
     cout<<endl;
+    int op3,bore;
+    cin>>op3; 
+    switch(op3)
+	{
+		case 1:
+			cout<<"\t\t\tThe available Toyota car is: \nPremio \nMILEAGE: 3000km\nPRICE: PKR 15,000 "<<endl;
+			
+			break;
+		case 2:
+			cout<<"\t\t\tThe available Honda car is: \nCity \nMILEAGE: 30,000 km\nPRICE: PKR 6,000"<<endl;
+			
+			break;
+		case 3:
+			cout<<"\t\t\tThe available Tesla car is: \nCyberTruck \nMILEAGE: 100km\nPRICE: PKR 40,000"<<endl;
+			
+			break;
+		case 4:
+			cout<<"\t\t\tThe available Hyundai car is: \nTuscon \nMILEAGE: 1,000 km\nPRICE: PKR 15,000"<<endl;
+			
+			break;
+		case 5:
+			cout<<"\t\t\tThe available Audi car is: \nE-tron \nMILEAGE: 900 km\nPRICE: PKR 35,000"<<endl;
 
+			break;
+    }
 }
 
-void Charges()
+void Charges(int x)
 {
-  
-    
     cout<<" Do You Want Driver (y/n) ? : ";
 	driver=getche();
     cout<<endl<<"Your name"<<endl;
     cin>>name;
     cout<<endl<<" For How Many Days ? : ";
     cin>>days;
-    amount=days*500;
+    amount=days*x;
      if (driver=='y' || driver=='Y')
              {
                  amount1=(1000*days)+amount;
@@ -137,39 +117,40 @@ void Charges()
                      cout<<endl<<endl<<endl<<endl<<endl;
                     }
 }
+
 void Calculate(int choice)
 {
     system("cls");
     if ( choice==1)
            {
-            cout<<"\t\t\t\t ********* You Selected AUDI ********* "<<endl;
-            Charges();
+            cout<<"\t\t\t\t ********* You Selected Toyota ********* "<<endl;
+            int t =15000;
+            Charges(t);
            }
     else if ( choice==2)
            {
-            cout<<"\t\t\t\t ********* You Selected DODGE ********* "<<endl;
-            Charges();
+            cout<<"\t\t\t\t ********* You Selected Honda ********* "<<endl;
+            int t=30000;
+            Charges(t);
            }
     else if ( choice==3)
            {
-            cout<<"\t\t\t\t ********* You Selected MAZDA ********* "<<endl;
-            Charges();
+            cout<<"\t\t\t\t ********* You Selected Tesla ********* "<<endl;
+            int t=40000;
+            Charges(t);
            }
     else if ( choice==4)
            {
-            cout<<"\t\t\t\t ********* You Selected BMW ********* "<<endl;
-            Charges();
+            cout<<"\t\t\t\t ********* You Selected Hyundai ********* "<<endl;
+            int t=15000;
+            Charges(t);
            }       
     else if ( choice==5)
            {
-            cout<<"\t\t\t\t ********* You Selected MUSTANG ********* "<<endl;
-            Charges();
+            cout<<"\t\t\t\t ********* You Selected Audi ********* "<<endl;
+            int t =35000;
+            Charges(t);
            }      
-    else if ( choice==6)
-           {
-            cout<<"\t\t\t\t ********* You Selected VOLVO ********* "<<endl;
-            Charges();
-           }
 }     
 
 void password()
@@ -200,7 +181,7 @@ void acars()
 	switch(op3)
 	{
 		case 1:
-			cout<<"\t\t\tThe available Toyota cars are: \nPremio \nMILEAGE: 3000km\nPRICE: PKR 15,000 \n\nYaris \nMILEAGE: 10,000km\nPRICE: PKR 6,000 \n\nRevo \nMILEAGE: 5000km\nPRICE: PKR 12,000"<<endl;
+			cout<<"\t\t\tThe available Toyota car is: \nPremio \nMILEAGE: 3000km\nPRICE: PKR 15,000 "<<endl;
 			cout<<"\n\nPress 1 to go back \nPress 2 to exit"<<endl;
 			cin>>bore;
 			if (bore == 2)
@@ -213,7 +194,7 @@ void acars()
 			}
 			break;
 		case 2:
-			cout<<"\t\t\tThe available Honda cars are: \nCity \nMILEAGE: 30,000 km\nPRICE: PKR 6,000"<<endl;
+			cout<<"\t\t\tThe available Honda car is: \nCity \nMILEAGE: 30,000 km\nPRICE: PKR 6,000"<<endl;
 			cout<<"\n\nPress 1 to go back \nPress 2 to exit"<<endl;
 			cin>>bore;
 			if (bore == 2)
@@ -226,7 +207,7 @@ void acars()
 			}
 			break;
 		case 3:
-			cout<<"\t\t\tThe available Tesla cars are: \nCyberTruck \nMILEAGE: 100km\nPRICE: PKR 40,000 \n\nModel S \nMILEAGE: 70 km\nPRICE: PKR 50,000"<<endl;
+			cout<<"\t\t\tThe available Tesla car is: \nCyberTruck \nMILEAGE: 100km\nPRICE: PKR 40,000"<<endl;
 			cout<<"\n\nPress 1 to go back \nPress 2 to exit"<<endl;
 			cin>>bore;
 			if (bore == 2)
@@ -239,7 +220,7 @@ void acars()
 			}
 			break;
 		case 4:
-			cout<<"\t\t\tThe available Hyundai cars are: \nTuscon \nMILEAGE: 1,000 km\nPRICE: PKR 15,000"<<endl;
+			cout<<"\t\t\tThe available Hyundai car is: \nTuscon \nMILEAGE: 1,000 km\nPRICE: PKR 15,000"<<endl;
 			cout<<"\n\nPress 1 to go back \nPress 2 to exit"<<endl;
 			cin>>bore;
 			if (bore == 2)
@@ -252,7 +233,7 @@ void acars()
 			}
 			break;
 		case 5:
-			cout<<"\t\t\tThe available Audi cars are: \nE-tron \nMILEAGE: 900 km\nPRICE: PKR 35,000 \n\nAudi A4 \nMILEAGE: 4,000 km\nPRICE: PKR 20,000 "<<endl;
+			cout<<"\t\t\tThe available Audi car is: \nE-tron \nMILEAGE: 900 km\nPRICE: PKR 35,000"<<endl;
 			cout<<"\n\nPress 1 to go back \nPress 2 to exit"<<endl;
 			cin>>bore;
 			if (bore == 2)
@@ -268,6 +249,7 @@ void acars()
 			break;
 	}
 }
+
 void ucars ()
 {
 	int op4, bore;
@@ -341,10 +323,9 @@ void ucars ()
 				a = 0;
 			}
 			break;
-		case 6:
-			break;
     }
 }
+
 void cinfo() {
     system("cls"); 
     ifstream file("customers.txt"); 
@@ -357,7 +338,6 @@ void cinfo() {
         cin.get();
         return;
     }
-
     string line;
     cout << "Customer Information:\n\n";
     while (getline(file, line)) { 
@@ -376,17 +356,18 @@ void cinfo() {
         a = 0; 
     }
 }
+
 void admin ()
 {
 	system("cls");
 	while (a != 1){
 	system("cls");
 	vertil();
-	horil("Hello \t\t\t");
 	horil("1. AVAILABLE CARS\t\t");
 	horil("2. CARS IN USE\t\t\t");
 	horil("3. CHECK CUSTOMER LIST\t\t");
-	horil("4. EXIT\t\t\t\t");
+    horil("4. BACK\t\t\t\t");
+	horil("5. EXIT\t\t\t\t");
 	vertil();
 	int op2;
 	cin>>op2;
@@ -401,97 +382,60 @@ void admin ()
 		case 3:
 		    cinfo();
 			break;
-		case 4:
+        case 4:
+            further1();
+		    break;	
+
+		case 5:
 			a = 1;
 		    break;	
 			
-	}
+	    }
+    }
 }
-}
-void customer ()
-{
-	cout<<"hello";
-}
-void finfo()
-{
-	system ("cls");
-	int bore;
-	cout<<"1. Appa Shamim ------ Toyota Corolla Grande ------ Paid Rs.12,000 ------ Number: 03217895672"<<endl;
-	cout<<"2. Babar Azam ------ Toyota Corolla Altis ------ Paid Rs.10,000 ------ Number: 00121789567"<<endl;
-	cout<<"3. Shiekh bin Salman ------ Toyota Land Cruiser ------ Paid Rs.25,000 ------ Number: 03337895672"<<endl;
-	cout<<"4. Suii ------ Honda Civic ------ Paid Rs.11,000 ------ Number: 03217895234"<<endl;
-	cout<<"5. Baji Shabana ------ Honda Civic Turbo ------ Paid Rs.14,000 ------ Number: 0332454672"<<endl;
-	cout<<"6. Prem ------ Audi A7 ------ Paid Rs.50,000 ------ Number: 0345321111"<<endl;
-	cout<<"7. Avada Noor Kedavra ------ Audi A6 ------ Paid Rs.45,000 ------ Number: 01231231230"<<endl;
-	if(driver=='y'){
-		cout<<"\t\tNEW USER LIST\t\t"<<endl;
-		cout<<"1. "<<name<<"--------"<<"Car no:"<<choice<<"In available cars"<<"-------"<<amount1<<"------"<<"Number : Pending"<<endl;}
-		else{
-				cout<<"1. "<<name<<"--------"<<"Car no:"<<choice<<"In available cars"<<"-------"<<amount<<"------"<<"Number : Pending"<<endl;
-		}
-	
-		cout<<"\n\nPress 1 to go back \nPress 2 to exit"<<endl;
-			cin>>bore;
-			if (bore == 2)
-			{
-				a = 1;
-			}
-			else if (bore == 1)
-			{
-				a = 0;
-			}
-}
-void admin1 ()
-{
-	system("cls");
-	while (a != 1){
-	system("cls");
-	vertil();
-	horil("Hello \t\t\t");
-	horil("1. AVAILABLE CARS\t\t");
-	horil("2. CARS IN USE\t\t\t");
-	horil("3. CHECK CUSTOMER LIST\t\t");
-	horil("4. EXIT\t\t\t\t");
-	vertil();
-	int op2;
-	cin>>op2;
-	switch (op2)
-	{
-		case 1:
-			acars();
-			break;
-		case 2:
-		    ucars();
-			break;
-		case 3:
-		    finfo();
-			break;
-		case 4:
-			a = 1;
-		    break;	
-			
-	}
-}}
 
 void further1()
 {
 	int a;
 	vertil();
 	horil("1. ADMIN\t\t\t");
-	horil("2. EXIT\t\t\t");
+    horil("2. CUSTOMER\t\t\t");
+	horil("3. EXIT\t\t\t\t");
+    
 	vertil();
 	cin>>a;
 	if(a==1){
 			password();
-			admin1 ();
+			admin ();
 	}
+    else if(a==2){
+
+    }
 	else{
 		system("cls");
 		cout<<"Thank you for choosing Guftar Car Rental Service ";
 	}
 }
 
+void customers(){
+    int choi;
+		cout<<"\nDo you want to rent a car(press 1) ? : ";
+    	cin>>choi;
+		if(choi==1)
+		{
+			CarsSelection();
+		}
+		else{
+            cout<<"Thank you for choosing Guftar Car Rental Service ";
+	
+			exit(0);
+        }
 
+        cout<<"Which Car Do You Want ? : ";
+    cin>>choice;
+    Calculate(choice);
+    further1();    
+}
 
 int main ()
 {
@@ -501,30 +445,24 @@ int main ()
 	horil("Choose from the following:\t");
 	horil("1. ADMIN\t\t\t");
 	horil("2. CUSTOMER\t\t\t");
+    horil("3. INFORMATION\t\t\t");
 	vertil();
 	cin>>op1;
 	if(op1==1)
 	{
 		password();
 		admin();
+		return 0;
 	}
 	else if(op1==2)
 	{
-		int choi;
-		cout<<"\nDo you want to rent a car(press 1) ? : ";
-    	cin>>choi;
-		if(choi==1)
-		{
-			CarsSelection();
-		}
-		else
-			exit(0);
+        customers();
         
 	}
-    cout<<"Which Car Do You Want ? : ";
-    cin>>choice;
-    Calculate(choice);
-            	further1();
+    else if(op1==3)
+	{
+		information();
+        further1();
+        exit(0);
 	}
-
-
+	}
